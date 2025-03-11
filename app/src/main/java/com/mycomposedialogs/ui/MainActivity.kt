@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyappTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                   // Greeting( modifier = Modifier.padding(innerPadding))
+                    // Greeting( modifier = Modifier.padding(innerPadding))
                     DialogWithViewModel(viewModel)
 
                 }
@@ -69,9 +69,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-
 
 
 // Function to set navigation and status bar colors
@@ -97,11 +94,6 @@ private fun setWindowColors(window: Window, color: Color) {
 }
 
 
-
-
-
-
-
 @Composable
 fun Greeting(modifier: Modifier) {
     //var showDialog by remember { mutableStateOf(false) } // ✅ Manage dialog visibility state
@@ -119,16 +111,16 @@ fun Greeting(modifier: Modifier) {
     }
 
     if (showDialog) {
-/*        DialogScreen(
-            onResult = { isConfirmed ->
-                showDialog = false
-                if (isConfirmed) {
-                    println("Kullanıcı EVET dedi.")
-                } else {
-                    println("Kullanıcı HAYIR dedi.")
-                }
-            }
-        )*/
+        /*        DialogScreen(
+                    onResult = { isConfirmed ->
+                        showDialog = false
+                        if (isConfirmed) {
+                            println("Kullanıcı EVET dedi.")
+                        } else {
+                            println("Kullanıcı HAYIR dedi.")
+                        }
+                    }
+                )*/
 
         /*  CALISLIYOR
        ExampleDialog(
@@ -136,8 +128,6 @@ fun Greeting(modifier: Modifier) {
            onConfirm = { showDialog = false }
        )
 */
-
-
 
 
         /*
@@ -169,15 +159,12 @@ fun Greeting(modifier: Modifier) {
 */
 
 
-
-/* OK CALISIYOR  */
+        /* OK CALISIYOR  */
 //    DialogTest()
-
 
 
     }
 }
-
 
 
 @Preview(showBackground = true)

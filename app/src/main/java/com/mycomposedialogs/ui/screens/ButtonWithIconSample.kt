@@ -26,10 +26,10 @@ import androidx.compose.ui.unit.dp // dp kullanımı için
 
 /**
 Açıklamalar:
-    - Row ile hizalama: fillMaxWidth() kullanarak tüm genişliği kaplıyoruz.
-    - Icon sola sabitlendi: İlk öğe olduğu için en solda kalıyor.
-    - Spacer(width = 8.dp) ile ikon ile metin arasına boşluk ekledik.
-    - Text bileşeni weight(1f) ile genişletildi ve sağa itildi.
+- Row ile hizalama: fillMaxWidth() kullanarak tüm genişliği kaplıyoruz.
+- Icon sola sabitlendi: İlk öğe olduğu için en solda kalıyor.
+- Spacer(width = 8.dp) ile ikon ile metin arasına boşluk ekledik.
+- Text bileşeni weight(1f) ile genişletildi ve sağa itildi.
 
 Bu sayede ikon en solda, metin ise sağa yaslanmış olur.
 
@@ -38,7 +38,9 @@ Bu sayede ikon en solda, metin ise sağa yaslanmış olur.
 fun ButtonWithIconSample() {
     Button(
         shape = MaterialTheme.shapes.small,
-        modifier = Modifier.fillMaxWidth().padding(8.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
         onClick = { /* Do something! */ },
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp) // İç padding
     ) {

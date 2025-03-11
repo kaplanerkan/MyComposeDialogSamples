@@ -31,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+
 @Composable
 fun CustomDialog(
     showDialog: Boolean,
@@ -70,13 +71,12 @@ fun CustomDialog(
 
 @Preview(showBackground = true)
 @Composable
-fun CustomDialogPreview(){
+fun CustomDialogPreview() {
     CustomDialog(showDialog = true, onDismissRequest = { /*TODO*/ }) {
 
     }
 
 }
-
 
 
 /*
@@ -114,8 +114,8 @@ fun ExampleDialog(onDismiss: () -> Unit, onConfirm: () -> Unit) {
             ) {
                 Button(
                     onClick = {
-                    Log.e("SONUC","Hayir Tiklandi")
-                    onDismiss()
+                        Log.e("SONUC", "Hayir Tiklandi")
+                        onDismiss()
                     }
                 ) {
                     Text("HAYIR")
@@ -123,7 +123,7 @@ fun ExampleDialog(onDismiss: () -> Unit, onConfirm: () -> Unit) {
 
                 Button(
                     onClick = {
-                        Log.e("SONUC","Evet Tiklandi")
+                        Log.e("SONUC", "Evet Tiklandi")
                         onConfirm()
                     }
                 ) {

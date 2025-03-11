@@ -35,16 +35,16 @@ import com.mycomposedialogs.R
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun CustomDialog3(
-    onDismiss:()->Unit,
-    onConfirm:()->Unit
+    onDismiss: () -> Unit,
+    onConfirm: () -> Unit
 ) {
     Dialog(
-    onDismissRequest = {
-        onDismiss()
-    },
-    properties = DialogProperties(
-    usePlatformDefaultWidth = false
-    )
+        onDismissRequest = {
+            onDismiss()
+        },
+        properties = DialogProperties(
+            usePlatformDefaultWidth = false
+        )
     ) {
         Card(
             elevation = CardDefaults.cardElevation(5.dp),
@@ -52,13 +52,13 @@ fun CustomDialog3(
             modifier = Modifier
                 .fillMaxWidth(0.95f)
                 .border(2.dp, color = orange, shape = RoundedCornerShape(15.dp))
-        ){
+        ) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(15.dp),
                 verticalArrangement = Arrangement.spacedBy(25.dp)
-            ){
+            ) {
 
                 Text(
                     text = "Your selected items. Please select a payment method to continue.",
@@ -68,18 +68,18 @@ fun CustomDialog3(
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     verticalArrangement = Arrangement.spacedBy(15.dp)
-                ){
+                ) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
-                    ){
+                    ) {
                         Text("Samsung Galaxy S22")
                         Text("799,00$")
                     }
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
-                    ){
+                    ) {
                         Text("Galaxy S22 Cover Case")
                         Text("32,00$")
                     }
@@ -89,7 +89,7 @@ fun CustomDialog3(
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
-                    ){
+                    ) {
                         Text("Total", fontWeight = FontWeight.Bold)
                         Text("831,00$", fontWeight = FontWeight.Bold)
                     }
@@ -97,14 +97,14 @@ fun CustomDialog3(
                         modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceAround
-                    ){
+                    ) {
                         Image(
                             painter = painterResource(id = R.drawable.klarna),
                             contentDescription = "klarna",
                             modifier = Modifier
                                 .fillMaxWidth(0.2f)
                                 .clip(RoundedCornerShape(15.dp))
-                                .clickable {  }
+                                .clickable { }
                         )
                         Image(
                             painter = painterResource(id = R.drawable.paypal),
@@ -112,7 +112,7 @@ fun CustomDialog3(
                             modifier = Modifier
                                 .fillMaxWidth(0.3f)
                                 .clip(RoundedCornerShape(15.dp))
-                                .clickable {  }
+                                .clickable { }
                         )
                     }
 
@@ -122,7 +122,7 @@ fun CustomDialog3(
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(30.dp),
                     verticalAlignment = Alignment.CenterVertically
-                ){
+                ) {
                     Button(
                         onClick = {
                             onDismiss()
@@ -133,8 +133,7 @@ fun CustomDialog3(
                         ),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .weight(1f)
-                        ,
+                            .weight(1f),
                         shape = CircleShape
                     ) {
                         Text(
@@ -172,10 +171,8 @@ fun CustomDialog3(
 }
 
 
-
-
 @Preview(showBackground = true)
 @Composable
-fun CustomDialog3Preview(){
+fun CustomDialog3Preview() {
     CustomDialog3(onDismiss = { /*TODO*/ }, onConfirm = { /*TODO*/ })
 }

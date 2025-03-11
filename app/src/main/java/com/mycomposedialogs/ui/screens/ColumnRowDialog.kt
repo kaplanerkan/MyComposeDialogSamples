@@ -56,8 +56,7 @@ private fun RowDialog(
 }
 
 
-
-@Preview (showBackground = true)
+@Preview(showBackground = true)
 @Composable
 fun DialogTest() {
     var dialogEvent by remember {

@@ -22,7 +22,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BasicAlertDialogSample(
@@ -40,15 +39,17 @@ fun BasicAlertDialogSample(
             }
         ) {
             Surface(
-                modifier = Modifier.wrapContentWidth().wrapContentHeight(),
+                modifier = Modifier
+                    .wrapContentWidth()
+                    .wrapContentHeight(),
                 shape = MaterialTheme.shapes.large,
                 tonalElevation = AlertDialogDefaults.TonalElevation
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         text =
-                        "This area typically contains the supportive text " +
-                                "which presents the details regarding the Dialog's purpose.",
+                            "This area typically contains the supportive text " +
+                                    "which presents the details regarding the Dialog's purpose.",
                     )
                     Spacer(modifier = Modifier.height(24.dp))
                     TextButton(
@@ -64,9 +65,8 @@ fun BasicAlertDialogSample(
 }
 
 
-
 @Preview(showBackground = true)
 @Composable
-fun BasicAlertDialogSamplePreview(){
+fun BasicAlertDialogSamplePreview() {
     BasicAlertDialogSample()
 }

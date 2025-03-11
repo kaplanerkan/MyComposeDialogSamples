@@ -63,9 +63,10 @@ fun DialogYesNo(onDismiss: () -> Unit, onConfirm: () -> Unit) {
         Dialog(state) {
             Scrim(enter = fadeIn(), exit = fadeOut(), scrimColor = Color.Black.copy(0.3f))
             DialogPanel(
-                modifier = Modifier.systemBarsPadding()
+                modifier = Modifier
+                    .systemBarsPadding()
                     .padding(16.dp)
-                    .shadow(8.dp,   MaterialTheme.shapes.large)
+                    .shadow(8.dp, MaterialTheme.shapes.large)
                     .background(Color.White, MaterialTheme.shapes.medium)
                     .padding(24.dp),
                 enter = scaleIn(initialScale = 0.8f) + fadeIn(tween(durationMillis = 250)),
@@ -89,38 +90,45 @@ fun DialogYesNo(onDismiss: () -> Unit, onConfirm: () -> Unit) {
                     )
                     Spacer(Modifier.height(24.dp))
                     Row(
-                        horizontalArrangement = Arrangement.spacedBy(8.dp, alignment = Alignment.End),
+                        horizontalArrangement = Arrangement.spacedBy(
+                            8.dp,
+                            alignment = Alignment.End
+                        ),
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Box(Modifier.clip(MaterialTheme.shapes.large)
-                            .clickable(role = Role.Button) {
-                                state.visible = false
-                                onDismiss()
-                            }
-
-                            .border(1.dp, Color(0xFFBDBDBD), MaterialTheme.shapes.medium)
-                            .padding(horizontal = 14.dp, vertical = 10.dp)
-                            .let { if (isCompact) it.weight(1f) else it },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            BasicText(
-                                text = "Cancel", style = TextStyle.Default
-                                )
-
-                        }
                         Box(
-                            Modifier.clip(MaterialTheme.shapes.small)
+                            Modifier
+                                .clip(MaterialTheme.shapes.large)
                                 .clickable(role = Role.Button) {
                                     state.visible = false
-                                onConfirm()
+                                    onDismiss()
                                 }
-                                    .background(Color(0xFF212121))
+
+                                .border(1.dp, Color(0xFFBDBDBD), MaterialTheme.shapes.medium)
                                 .padding(horizontal = 14.dp, vertical = 10.dp)
                                 .let { if (isCompact) it.weight(1f) else it },
                             contentAlignment = Alignment.Center
                         ) {
                             BasicText(
-                                text = "Continue", style = TextStyle.Default.copy(color = Color.White)
+                                text = "Cancel", style = TextStyle.Default
+                            )
+
+                        }
+                        Box(
+                            Modifier
+                                .clip(MaterialTheme.shapes.small)
+                                .clickable(role = Role.Button) {
+                                    state.visible = false
+                                    onConfirm()
+                                }
+                                .background(Color(0xFF212121))
+                                .padding(horizontal = 14.dp, vertical = 10.dp)
+                                .let { if (isCompact) it.weight(1f) else it },
+                            contentAlignment = Alignment.Center
+                        ) {
+                            BasicText(
+                                text = "Continue",
+                                style = TextStyle.Default.copy(color = Color.White)
 
                             )
                         }
@@ -130,7 +138,6 @@ fun DialogYesNo(onDismiss: () -> Unit, onConfirm: () -> Unit) {
         }
     }
 }
-
 
 
 @Preview(showBackground = true)

@@ -25,10 +25,10 @@ fun DialogWithViewModel(
     viewModel: DialogViewModel
 ) {
     Box(
-    modifier = Modifier
-    .fillMaxSize(),
-    contentAlignment = Alignment.Center
-    ){
+        modifier = Modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
         Button(
             shape = MaterialTheme.shapes.small,
             onClick = {
@@ -41,7 +41,7 @@ fun DialogWithViewModel(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp),
-           // shape = CircleShape
+            // shape = CircleShape
         ) {
             Text(
                 text = "Confirm",
@@ -51,7 +51,7 @@ fun DialogWithViewModel(
             )
         }
     }
-    if(viewModel.isDialogShown){
+    if (viewModel.isDialogShown) {
         CustomDialog3(
             onDismiss = {
                 viewModel.onDismissDialog()
@@ -66,7 +66,7 @@ fun DialogWithViewModel(
 
 @Preview(showBackground = true)
 @Composable
-fun DialogWithViewModelPreview(){
+fun DialogWithViewModelPreview() {
     DialogWithViewModel(viewModel = DialogViewModel())
 
 }

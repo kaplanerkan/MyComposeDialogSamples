@@ -50,7 +50,6 @@ fun SimpleAlertDialog(
 }
 
 
-
 @Preview(showBackground = true)
 @Composable
 fun SimpleAlertDialogPreview() {

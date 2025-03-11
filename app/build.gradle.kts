@@ -85,4 +85,6 @@ dependencies {
     implementation(libs.core)
 
     implementation (libs.lifecycle.viewmodel.compose)
+
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
 }
